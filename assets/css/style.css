@@ -111,3 +111,28 @@ a{color:var(--blue-deep); text-decoration:none}
     transform: translateY(0);
   }
 }
+/* Efecto visual sobre la imagen del hero */
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease-out;
+  filter: brightness(0.85) saturate(1.1);
+  transition: filter 0.4s ease;
+}
+
+.hero-image:hover {
+  filter: brightness(1) saturate(1.2);
+}
+
+/* Fondo difuminado detrás de la imagen */
+.hero-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 64, 88, 0.2), rgba(0, 64, 88, 0.05));
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  z-index: 1;
+}

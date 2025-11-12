@@ -136,3 +136,29 @@ a{color:var(--blue-deep); text-decoration:none}
   border-radius: 12px;
   z-index: 1;
 }
+/* --- Diseño responsive para móviles --- */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-left {
+    max-width: 600px;
+  }
+
+  .hero-right {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-image {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 16px;
+  }
+}

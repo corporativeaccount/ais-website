@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="80" viewBox="0 0 240 80">
+<defs>
+  <linearGradient id="g" x1="0" x2="1">
+    <stop offset="0" stop-color="#0A3D62"/>
+    <stop offset="1" stop-color="#3C6382"/>
+  </linearGradient>
+</defs>
+<rect width="240" height="80" rx="8" fill="none"/>
+<g transform="translate(10,10)">
+  <text x="0" y="48" font-family="Montserrat, Arial, sans-serif" font-weight="700" font-size="48" fill="url(#g)">AIS</text>
+  <text x="0" y="70" font-family="Open Sans, Arial, sans-serif" font-weight="600" font-size="10" fill="#6B7280">Accounting International Services S.A.S.</text>
+  <!-- subtle bar chart symbol -->
+  <g transform="translate(150,8)">
+    <rect x="0" y="28" width="6" height="12" rx="1" fill="#C8A951"/>
+    <rect x="10" y="20" width="6" height="20" rx="1" fill="#C8A951"/>
+    <rect x="20" y="8" width="6" height="32" rx="1" fill="#C8A951"/>
+  </g>
+</g>
+</svg>

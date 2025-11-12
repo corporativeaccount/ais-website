@@ -212,3 +212,27 @@ a{color:var(--blue-deep); text-decoration:none}
     border-radius: 16px;
   }
 }
+/* --- Efecto hover para los enlaces del footer --- */
+.footer .links a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer .links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.footer .links a:hover {
+  color: var(--gold);
+}
+
+.footer .links a:hover::after {
+  width: 100%;
+}

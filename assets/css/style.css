@@ -84,3 +84,30 @@ a{color:var(--blue-deep); text-decoration:none}
   .header-inner{padding:10px}
   .nav{display:none}
 }
+/* Imagen del hero */
+.hero-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Animación sutil */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

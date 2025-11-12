@@ -236,3 +236,38 @@ a{color:var(--blue-deep); text-decoration:none}
 .footer .links a:hover::after {
   width: 100%;
 }
+/* --- Corrección de botones en el hero --- */
+.hero-left .cta,
+.hero-left .secondary-cta {
+  display: inline-block;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.hero-left .secondary-cta {
+  margin-left: 12px;
+}
+
+/* Ajuste para móviles: los botones se alinean bien */
+@media (max-width: 600px) {
+  .hero-left .cta,
+  .hero-left .secondary-cta {
+    display: block;
+    margin: 8px auto;
+    width: fit-content;
+  }
+  .hero-left .secondary-cta {
+    margin-left: 0;
+  }
+}
+
+/* --- Estilo para derechos reservados --- */
+.footer-bottom {
+  border-top: 1px solid var(--muted);
+  margin-top: 10px;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--muted);
+  background: transparent;
+}

@@ -126,29 +126,65 @@ a{color:var(--blue-deep); text-decoration:none}
   }
 }
 /* Efecto visual sobre la imagen del hero */
-.hero-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  animation: fadeInUp 1s ease-out;
-  filter: brightness(0.85) saturate(1.1);
-  transition: filter 0.4s ease;
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
 }
 
-.hero-image:hover {
-  filter: brightness(1) saturate(1.2);
+.hero-left {
+  flex: 1;
 }
 
-/* Fondo difuminado detrás de la imagen */
-.hero-right::before {
-  content: "";
+.hero-right {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-shape {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0, 64, 88, 0.2), rgba(0, 64, 88, 0.05));
-  backdrop-filter: blur(6px);
-  border-radius: 12px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, var(--accent) 0%, transparent 70%);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  object-fit: cover;
   z-index: 1;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* ----- Modo responsive ----- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-right {
+    order: 2;
+    margin-top: 2rem;
+  }
+  .hero-left {
+    order: 1;
+  }
+  .hero-image {
+    max-width: 100%;
+  }
 }
 /* --- Diseño responsive para móviles --- */
 @media (max-width: 900px) {

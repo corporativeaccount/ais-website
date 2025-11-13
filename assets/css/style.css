@@ -352,3 +352,42 @@ a{color:var(--blue-deep); text-decoration:none}
   border-radius: 16px;
   transform: translateY(10%); /* baja la imagen un poco */
 }
+/* --- Menú móvil --- */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Versión móvil */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: var(--card);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    border-top: 1px solid var(--muted);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+  }
+
+  .nav a {
+    padding: 10px 0;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+}

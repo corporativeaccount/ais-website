@@ -76,7 +76,7 @@
 <footer class="footer">
   <div class="container footer-inner">
     <div>
-      <img src="/assets/img/logo.svg" alt="AIS logo" style="height:42px;margin-bottom:10px">
+      <img src="assets/img/logo.svg" alt="AIS logo" style="height:42px;margin-bottom:10px">
       <div class="small">Accounting International Services S.A.S.<br>Bogotá, Colombia<br><a href="mailto:billing@aisservices.co">billing@aisservices.co</a></div>
     </div>
     <div class="links small">
@@ -85,7 +85,16 @@
       <a href="/blog.html">Blog</a>
     </div>
   </div>
+
+  <!-- 🔽 Nueva línea de derechos reservados integrada -->
+  <div class="footer-bottom">
+  © <span id="year"></span> AIS Accounting International Services. Todos los derechos reservados.
+</div>
 </footer>
+
 <script src="assets/js/theme.js" defer></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

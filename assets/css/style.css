@@ -320,3 +320,24 @@ a{color:var(--blue-deep); text-decoration:none}
     align-items: center;
   }
 }
+/* --- Corrección final para evitar que los botones del hero se bajen --- */
+.hero {
+  align-items: flex-start;
+}
+
+.hero-left {
+  flex: 1 1 55%;
+  min-width: 300px;
+}
+
+.hero-right {
+  flex: 1 1 40%;
+  max-width: 500px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+}

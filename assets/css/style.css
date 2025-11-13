@@ -236,22 +236,6 @@ a{color:var(--blue-deep); text-decoration:none}
 .footer .links a:hover::after {
   width: 100%;
 }
-/* --- Corrección de botones en el hero --- */
-.hero-left .cta,
-.hero-left .secondary-cta {
-  display: inline-block;
-  vertical-align: middle;
-  white-space: nowrap;
-  margin: 0 10px 0 0;
-}
-
-.hero-left {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
 /* --- Estilo para derechos reservados --- */
 .footer-bottom {
   margin-top: 10px;
@@ -261,6 +245,7 @@ a{color:var(--blue-deep); text-decoration:none}
   color: var(--muted);
   background: transparent;
 }
+
 /* --- Efecto hover en los títulos de secciones --- */
 .section h2:hover {
   color: var(--gold);
@@ -292,18 +277,27 @@ a{color:var(--blue-deep); text-decoration:none}
   width: 100%;
 }
 
-/* --- Corrección final para la alineación de botones del hero --- */
+/* --- Corrección final y definitiva para la alineación de botones del hero --- */
 .hero-left {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
+  display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .hero-left .cta,
 .hero-left .secondary-cta {
-  display: inline-block !important;
-  margin: 0 !important;
-  white-space: nowrap !important;
+  display: inline-block;
+  margin: 0;
+  white-space: nowrap;
   vertical-align: middle;
+}
+
+/* --- Adaptación móvil --- */
+@media (max-width: 600px) {
+  .hero-left {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }

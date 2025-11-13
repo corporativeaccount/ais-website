@@ -240,8 +240,10 @@ a{color:var(--blue-deep); text-decoration:none}
 .hero-left .cta,
 .hero-left .secondary-cta {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-right: 12px;
+  margin-bottom: 0;
   white-space: nowrap;
+  vertical-align: middle;
 }
 
 .hero-left .secondary-cta {
@@ -263,11 +265,15 @@ a{color:var(--blue-deep); text-decoration:none}
 
 /* --- Estilo para derechos reservados --- */
 .footer-bottom {
-  border-top: 1px solid var(--muted);
   margin-top: 10px;
   padding-top: 8px;
   text-align: center;
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--muted);
   background: transparent;
+}
+/* --- Efecto hover en los títulos de secciones --- */
+.section h2:hover {
+  color: var(--gold);
+  transition: color 0.3s ease;
 }

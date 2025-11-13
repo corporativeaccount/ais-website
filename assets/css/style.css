@@ -291,3 +291,19 @@ a{color:var(--blue-deep); text-decoration:none}
 .nav a:hover::after {
   width: 100%;
 }
+
+/* --- Corrección final para la alineación de botones del hero --- */
+.hero-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap;
+}
+
+.hero-left .cta,
+.hero-left .secondary-cta {
+  display: inline-block !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  vertical-align: middle;
+}

@@ -240,27 +240,16 @@ a{color:var(--blue-deep); text-decoration:none}
 .hero-left .cta,
 .hero-left .secondary-cta {
   display: inline-block;
-  margin-right: 12px;
-  margin-bottom: 0;
-  white-space: nowrap;
   vertical-align: middle;
+  white-space: nowrap;
+  margin: 0 10px 0 0;
 }
 
-.hero-left .secondary-cta {
-  margin-left: 12px;
-}
-
-/* Ajuste para móviles: los botones se alinean bien */
-@media (max-width: 600px) {
-  .hero-left .cta,
-  .hero-left .secondary-cta {
-    display: block;
-    margin: 8px auto;
-    width: fit-content;
-  }
-  .hero-left .secondary-cta {
-    margin-left: 0;
-  }
+.hero-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /* --- Estilo para derechos reservados --- */
@@ -276,4 +265,29 @@ a{color:var(--blue-deep); text-decoration:none}
 .section h2:hover {
   color: var(--gold);
   transition: color 0.3s ease;
+}
+
+/* --- Hover dorado en menú principal --- */
+.nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--gold);
+}
+
+.nav a:hover::after {
+  width: 100%;
 }

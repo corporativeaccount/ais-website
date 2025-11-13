@@ -320,9 +320,16 @@ a{color:var(--blue-deep); text-decoration:none}
     align-items: center;
   }
 }
-/* --- Corrección final para evitar que los botones del hero se bajen --- */
+
+/* --- Ajuste final del hero: equilibrio visual de imagen y texto --- */
 .hero {
-  align-items: flex-start;
+  display: flex;
+  align-items: center; /* centra verticalmente texto e imagen */
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
 }
 
 .hero-left {
@@ -333,6 +340,9 @@ a{color:var(--blue-deep); text-decoration:none}
 .hero-right {
   flex: 1 1 40%;
   max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-image {
@@ -340,4 +350,5 @@ a{color:var(--blue-deep); text-decoration:none}
   height: auto;
   object-fit: cover;
   border-radius: 16px;
+  transform: translateY(10%); /* baja la imagen un poco */
 }

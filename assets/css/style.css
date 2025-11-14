@@ -663,3 +663,44 @@ a{color:var(--blue-deep); text-decoration:none}
 @media (max-width: 900px) {
   .section-header { flex-direction: column; align-items: flex-start; gap:8px; }
 }
+
+/* ============================================================
+   SISTEMA UNIFICADO DE BOTONES PREMIUM (CTA PRINCIPALES)
+   Aplica a: .cta, .featured-button, .section-button
+============================================================ */
+
+.cta,
+.featured-button,
+.section-button {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-mid));
+  color: white !important;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(10,61,98,0.12);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.15s ease;
+  text-decoration: none;
+}
+
+.cta:hover,
+.featured-button:hover,
+.section-button:hover {
+  background: var(--gold);
+  color: var(--blue-deep) !important;
+  transform: translateY(-2px);
+}
+
+/* Asegura que las versiones secundarias no se vean afectadas */
+.secondary-cta {
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--text);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.secondary-cta:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}

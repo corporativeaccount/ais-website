@@ -291,3 +291,54 @@ a{color:var(--blue-deep); text-decoration:none}
 @media (max-width:600px){
   .hero-buttons{flex-direction:column;align-items:center}
 }
+
+/* ============================================================
+   9. Redes sociales en el footer 
+============================================================ */
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.social-links a {
+  color: var(--text);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--gold);
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   10. Botón flotante de WhatsApp 
+============================================================ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 999;
+  background: #25d366;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.whatsapp-float img {
+  width: 34px;
+  height: 34px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.30);
+}

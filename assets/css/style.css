@@ -348,6 +348,18 @@ a{color:var(--blue-deep); text-decoration:none}
   height: 24px;
 }
 
+/* Centrar título y redes */
+.social-wrapper {
+  text-align: center;
+}
+
+.social-title {
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
 /* ============================================================
    10. Botón flotante de WhatsApp — versión moderna y elegante
 ============================================================ */

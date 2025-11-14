@@ -122,8 +122,7 @@ async function loadFeeds() {
   allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
   // Renderizar
-  container.innerHTML = `
-    <div class="cards blog-cards">
+ container.innerHTML = `
     ${allItems.slice(0, 6).map(item => `
       <div class="blog-card">
         <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
@@ -131,8 +130,7 @@ async function loadFeeds() {
         <p class="source">${new URL(item.link).hostname.replace("www.", "")}</p>
       </div>
     `).join("")}
-    </div>
-  `;
+`;
 }
 
 loadFeeds();

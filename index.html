@@ -10,16 +10,15 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
 <header class="header">
   <div class="container header-inner">
     <div class="logo">
       <a href="index.html"><img src="assets/img/logo.svg" alt="AIS logo"></a>
     </div>
 
-    <!-- 🔽 Nuevo botón de menú móvil -->
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
 
-    <!-- 🔽 Menú principal -->
     <nav class="nav" id="nav-menu">
       <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
@@ -35,29 +34,35 @@
     </div>
   </div>
 </header>
+
 <main>
 <div class="container">
 
-<!-- ===============================
-     SECCIÓN: Última noticia destacada
-================================ -->
+
+<!-- =====================================================
+     SECCIÓN: Última noticia destacada (ya reubicada)
+===================================================== -->
 <section class="section featured-news">
   <h2 class="featured-title">Actualízate con lo más reciente</h2>
 
   <div id="featured-news-card" class="blog-card featured-news-card">
-  <div class="skeleton skeleton-featured"></div>
-</div>
+    <div class="skeleton skeleton-featured"></div>
+  </div>
 
   <a href="blog.html" class="cta featured-button">Ver todas las noticias</a>
 </section>
 
+
+
+<!-- =====================================================
+     SECCIÓN HERO (Servicios Contables en Colombia)
+===================================================== -->
 <section class="hero">
   <div class="hero-left">
     <span class="kicker">Servicios Contables en Colombia</span>
     <h1 class="h1">Más que contadores, aliados en tu crecimiento.</h1>
     <p class="lead">Declaración de impuestos, contabilidad e informes financieros y nómina — servicios profesionales para PYMES y empresarios que buscan tranquilidad fiscal y financiera.</p>
 
-    <!-- Nuevo contenedor para los botones -->
     <div class="hero-buttons">
       <a class="cta" href="/servicios.html">Conoce nuestros servicios</a>
       <a class="secondary-cta" href="/contacto.html">Solicita asesoría gratuita</a>
@@ -70,11 +75,15 @@
   </div>
 </section>
 
+
+
+<!-- =====================================================
+     SECCIÓN: Nuestros Servicios Contables
+===================================================== -->
 <section class="section">
   <div class="container">
     <div class="section-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
       <h2>Nuestros Servicios Contables</h2>
-      <!-- Opcional: si quieres el botón a la derecha del título, puedes dejarlo aquí; lo hemos decidido debajo -->
     </div>
 
     <div class="cards">
@@ -92,29 +101,67 @@
       </div>
     </div>
 
-    <!-- BOTÓN colocado DEBAJO de las tarjetas, centrado y con estilo CTA -->
     <div style="text-align:center;margin-top:22px;">
       <a href="servicios.html" class="cta section-button">Ver todos los servicios</a>
     </div>
   </div>
 </section>
 
+
+
+<!-- =====================================================
+     SECCIÓN: ¿Por qué elegir AIS? (Actualizada a 4 razones)
+===================================================== -->
 <section class="section">
   <h2>¿Por qué elegir AIS?</h2>
+
   <div class="cards" style="grid-template-columns:repeat(2,1fr);">
-    <div class="card"><h4>Experiencia local e internacional</h4><p class="small">Equipo con experiencia en normativa colombiana y atención a clientes extranjeros.</p></div>
-    <div class="card"><h4>Transparencia y soporte</h4><p class="small">Comunicación clara y entrega de documentos en formatos accesibles.</p></div>
+
+    <div class="card">
+      <h4>Experiencia local e internacional</h4>
+      <p class="small">Nuestro equipo domina la normativa contable y tributaria colombiana, además de atender empresas y emprendedores extranjeros con necesidades multisectoriales.</p>
+    </div>
+
+    <div class="card">
+      <h4>Transparencia y soporte continuo</h4>
+      <p class="small">Brindamos comunicación clara, reportes oportunos y acompañamiento permanente para que siempre tengas control total de tu información financiera.</p>
+    </div>
+
+    <div class="card">
+      <h4>Optimización tributaria estratégica</h4>
+      <p class="small">Implementamos estrategias fiscales 100% legales que reducen costos, evitan sanciones y mejoran el flujo de caja de tu empresa.</p>
+    </div>
+
+    <div class="card">
+      <h4>Acompañamiento personalizado</h4>
+      <p class="small">Asignamos un asesor contable dedicado que entiende tu negocio, responde rápidamente y te guía en decisiones financieras clave.</p>
+    </div>
+
   </div>
+
+  <!-- Botón agregado -->
+  <div style="text-align:center;margin-top:26px;">
+    <a href="nosotros.html" class="cta section-button">Conoce más sobre nosotros</a>
+  </div>
+
 </section>
+
+
 
 </div>
 </main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 <footer class="footer">
   <div class="container footer-inner">
     <div>
       <img src="assets/img/logo.svg" alt="AIS logo" style="height:42px;margin-bottom:10px">
       <div class="small">Accounting International Services S.A.S.<br>Bogotá, Colombia<br><a href="mailto:billing@aisservices.co">billing@aisservices.co</a></div>
     </div>
+
     <div class="links small">
       <a href="/privacidad.html">Política de privacidad</a>
       <a href="/contacto.html">Contacto</a>
@@ -122,18 +169,20 @@
     </div>
   </div>
 
-  <!-- 🔽 Nueva línea de derechos reservados integrada -->
   <div class="footer-bottom">
-  © <span id="year"></span> AIS Accounting International Services. Todos los derechos reservados.
-</div>
+    © <span id="year"></span> AIS Accounting International Services. Todos los derechos reservados.
+  </div>
 </footer>
 
+
 <script src="assets/js/theme.js" defer></script>
+
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 <script>
+// --- Noticia destacada ---
 const featuredFeeds = [
   "https://actualicese.com/feed/",
   "https://www.larepublica.co/rss/economia",
@@ -155,26 +204,18 @@ async function loadFeaturedNews() {
       );
       const data = await response.json();
       if (data.items) {
-        allItems.push(...data.items.slice(0, 1)); // 1 noticia por fuente
+        allItems.push(...data.items.slice(0, 1));
       }
-    } catch (e) {
-      console.warn("Error cargando feed:", url);
-    }
+    } catch (e) {}
   }
 
-  // Ordenar por fecha descendente
   allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-
   const item = allItems[0];
 
-  // Reemplazar el skeleton con la noticia real
   document.getElementById("featured-news-card").innerHTML = `
-  <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
-  <p class="excerpt">
-    ${(item.description || "").replace(/<[^>]+>/g, "").substring(0, 180)}...
-  </p>
-`;
-
+    <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+    <p class="excerpt">${(item.description || "").replace(/<[^>]+>/g, "").substring(0, 180)}...</p>
+  `;
 }
 
 loadFeaturedNews();

@@ -293,6 +293,17 @@ a{color:var(--blue-deep); text-decoration:none}
   vertical-align: middle;
 }
 
+/* --- Hover dorado en botones principales --- */
+.cta:hover {
+  background: var(--gold);
+  color: var(--blue-deep);
+}
+
+.secondary-cta:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 /* --- Adaptación móvil --- */
 @media (max-width: 600px) {
   .hero-left {

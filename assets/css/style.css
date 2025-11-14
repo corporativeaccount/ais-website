@@ -293,28 +293,39 @@ a{color:var(--blue-deep); text-decoration:none}
 }
 
 /* ============================================================
-   9. Redes sociales en el footer 
+   9. Redes sociales en el footer (Versión Premium SVG Outline)
 ============================================================ */
 
 .social-links {
   display: flex;
-  gap: 16px;
-  font-size: 24px;
-  margin-bottom: 12px;
+  gap: 18px;
+  align-items: center;
 }
 
 .social-links a {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
   color: var(--text);
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .social-links a:hover {
   color: var(--gold);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
 }
 
 /* ============================================================
-   10. Botón flotante de WhatsApp 
+   10. Botón flotante de WhatsApp — versión moderna y elegante
 ============================================================ */
 
 .whatsapp-float {
@@ -322,23 +333,24 @@ a{color:var(--blue-deep); text-decoration:none}
   bottom: 22px;
   right: 22px;
   z-index: 999;
-  background: #25d366;
-  width: 62px;
-  height: 62px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
+  background: #25D366;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-  transition: transform 0.2s ease, box-shadow 0.25s ease;
-}
-
-.whatsapp-float img {
-  width: 34px;
-  height: 34px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: 0.25s ease;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.08);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.30);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.32);
+}
+
+.whatsapp-float svg {
+  width: 34px;
+  height: 34px;
+  stroke: white;
 }

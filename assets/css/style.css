@@ -500,3 +500,22 @@ a{color:var(--blue-deep); text-decoration:none}
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
+/* --- Grid premium para noticias del blog --- */
+.cards.blog-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .cards.blog-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards.blog-cards {
+    grid-template-columns: 1fr;
+  }
+}

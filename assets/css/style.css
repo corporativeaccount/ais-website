@@ -582,15 +582,17 @@ a{color:var(--blue-deep); text-decoration:none}
   line-height: 1.6;
 }
 
+/* --- Botón destacado igual al CTA principal --- */
 .featured-button {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  background: var(--blue-deep);
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-mid));
   color: white;
   font-weight: 700;
-  border-radius: 10px;
-  transition: background 0.3s ease;
+  box-shadow: 0 6px 18px rgba(10,61,98,0.12);
+  transition: background 0.3s ease, color 0.3s ease;
+  margin-top: 20px;
 }
 
 .featured-button:hover {

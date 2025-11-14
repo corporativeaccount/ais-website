@@ -631,3 +631,35 @@ a{color:var(--blue-deep); text-decoration:none}
   background: var(--gold);
   color: var(--blue-deep);
 }
+
+/* ===== Botón de sección igual al CTA principal (para "Ver todos los servicios") ===== */
+.section-button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-mid));
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(10,61,98,0.12);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.15s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.section-button:hover {
+  background: var(--gold);
+  color: var(--blue-deep);
+  transform: translateY(-2px);
+}
+
+/* Ajuste para que .section-header no empuje elementos en móviles */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .section-header { flex-direction: column; align-items: flex-start; gap:8px; }
+}

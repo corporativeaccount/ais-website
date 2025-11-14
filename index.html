@@ -120,5 +120,49 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+<script>
+const featuredFeeds = [
+  "https://actualicese.com/feed/",
+  "https://www.larepublica.co/rss/economia",
+  "https://www.dian.gov.co/sitios/rss/Paginas/rssdian.aspx",
+  "https://www.accountingtoday.com/feed",
+  "https://journalofaccountancy.com/content/joa/rss/joa.xml",
+  "https://www.irs.gov/rss/irs-newsroom.xml",
+  "https://www.bloomberg.com/feed/podcast/tax-savvy",
+  "https://www.forbes.com/money/feed/"
+];
+
+async function loadFeaturedNews() {
+  const allItems = [];
+
+  for (const url of featuredFeeds) {
+    try {
+      const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+      const data = await response.json();
+      if (data.items) {
+        allItems.push(...data.items.slice(0, 1)); // 1 noticia por fuente
+      }
+    } catch (e) {
+      console.warn("Error cargando feed:", url);
+    }
+  }
+
+  // Ordenar por fecha descendente
+  allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+
+  const item = allItems[0]; // la más reciente
+
+  document.getElementById("featured-news-card").innerHTML = `
+    <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+    <p class="excerpt">
+      ${(item.description || "").replace(/<[^>]+>/g, "").substring(0, 180)}...
+    </p>
+  `;
+}
+
+loadFeaturedNews();
+</script>
+
 </body>
 </html>

@@ -609,3 +609,25 @@ a{color:var(--blue-deep); text-decoration:none}
   background-size: 200% 100%;
   animation: shimmer 1.6s infinite;
 }
+
+/* Boton para nuestros servicios */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-button {
+  padding: 10px 16px;
+  background: var(--blue-deep);
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.section-button:hover {
+  background: var(--gold);
+  color: var(--blue-deep);
+}

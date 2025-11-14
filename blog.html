@@ -71,37 +71,68 @@
 
 <script>
 const feeds = [
+  // Colombia
   "https://actualicese.com/feed/",
   "https://www.larepublica.co/rss/economia",
+  "https://www.portafolio.co/rss/economia",
   "https://www.dian.gov.co/sitios/rss/Paginas/rssdian.aspx",
-  "https://www.accountingtoday.com/feed",
+
+  // USA
+  "https://www.accountingtoday.com/feed/",
   "https://journalofaccountancy.com/content/joa/rss/joa.xml",
-  "https://www.irs.gov/rss/irs-newsroom.xml"
+  "https://www.irs.gov/rss/irs-newsroom.xml",
+
+  // Bloomberg Taxes (feed alternativo válido)
+  "https://rss.app/feeds/eDkFBJxy6XAk3BVu.xml",
+
+  // Forbes Taxes (feed alternativo válido)
+  "https://rss.app/feeds/vHmnP2V9d8H2Qha6.xml"
 ];
 
 const container = document.getElementById("rss-news");
 
 async function loadFeeds() {
-  const allItems = [];
+  let allItems = [];
 
   for (const url of feeds) {
     try {
       const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
       const data = await response.json();
-      if (data.items) allItems.push(...data.items.slice(0, 2)); // toma 2 noticias de cada fuente
+
+      if (data.items) {
+        // Tomamos hasta 3 noticias por fuente para tener más contenido disponible
+        allItems.push(...data.items.slice(0, 3));
+      }
     } catch (e) {
       console.warn("Error al cargar feed:", url);
     }
   }
 
-  // ordena por fecha
-  allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+  // Quitar duplicados por título
+  const unique = [];
+  const titles = new Set();
 
-  // renderiza
-  container.innerHTML = allItems.slice(0, 6).map(item => `
+  for (const item of allItems) {
+    if (!titles.has(item.title)) {
+      titles.add(item.title);
+      unique.push(item);
+    }
+  }
+
+  // Ordenar por fecha
+  unique.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+
+  // Mostrar 6 noticias o menos si es lo único disponible
+  const finalNews = unique.slice(0, 6);
+
+  container.innerHTML = finalNews.map(item => `
     <div class="card">
-      <h3><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h3>
-      <p class="small">${item.description?.substring(0, 150) || ""}...</p>
+      <h3>
+        <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+          ${item.title}
+        </a>
+      </h3>
+      <p class="small">${item.description?.substring(0,150) || ""}...</p>
       <p class="small" style="color: var(--muted); font-size: 12px;">
         Fuente: ${new URL(item.link).hostname.replace("www.", "")}
       </p>

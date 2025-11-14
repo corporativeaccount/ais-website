@@ -447,13 +447,6 @@ a{color:var(--blue-deep); text-decoration:none}
   background: var(--gold);
   color: var(--blue-deep);
 }
-/* --- Estilo PREMIUM para tarjetas del blog (tipo Bloomberg / Forbes) --- */
-.cards.blog-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 28px;
-  margin-top: 30px;
-}
 
 .blog-card {
   background: var(--card);
@@ -500,25 +493,7 @@ a{color:var(--blue-deep); text-decoration:none}
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
-/* --- Grid premium para noticias del blog --- */
-.cards.blog-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 32px;
-}
 
-@media (max-width: 900px) {
-  .cards.blog-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .cards.blog-cards {
-    grid-template-columns: 1fr;
-  }
-}
 /* --- Grid premium final para noticias del Blog --- */
 .cards.blog-cards {
   display: grid !important;

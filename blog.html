@@ -72,14 +72,17 @@
 <script>
 const feeds = [
   
+  // Colombia
   "https://actualicese.com/feed/",
   "https://www.larepublica.co/rss/economia",
-  "https://www.dian.gov.co/sitios/rss/Paginas/rssdian.aspx",
+  "https://www.portafolio.co/economia/feed",
+  "https://www.ambitojuridico.com/rss.xml",
+
+  // USA
   "https://www.accountingtoday.com/feed",
   "https://journalofaccountancy.com/content/joa/rss/joa.xml",
   "https://www.irs.gov/rss/irs-newsroom.xml",
-  "https://www.bloomberg.com/feed/podcast/tax-savvy",
-  "https://www.forbes.com/money/feed/"
+  "https://taxfoundation.org/feed/"
 ];
 
 const container = document.getElementById("rss-news");
@@ -98,11 +101,8 @@ function showSkeleton() {
 
 showSkeleton();
 
-let allItems = [];
-let itemsToShow = 6; // cuántas mostrar inicialmente
-
 async function loadFeeds() {
-  const allItems = [];
+  let allItems = [];
 
   for (const url of feeds) {
     try {
@@ -110,19 +110,23 @@ async function loadFeeds() {
         `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`
       );
       const data = await response.json();
-      if (data.items) {
-        allItems.push(...data.items.slice(0, 2));
+
+      if (data.items && data.items.length > 0) {
+        allItems.push(...data.items.slice(0, 3)); // Tomar 3 por feed
       }
+
     } catch (e) {
       console.warn("Error al cargar feed:", url);
     }
   }
 
-  // Ordenar por fecha
+  if (allItems.length < 6) {
+    console.warn("⚠ Pocos items encontrados:", allItems.length);
+  }
+
   allItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-  // Renderizar
- container.innerHTML = `
+  container.innerHTML = `
     ${allItems.slice(0, 6).map(item => `
       <div class="blog-card">
         <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
@@ -130,7 +134,7 @@ async function loadFeeds() {
         <p class="source">${new URL(item.link).hostname.replace("www.", "")}</p>
       </div>
     `).join("")}
-`;
+  `;
 }
 
 loadFeeds();

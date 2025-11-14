@@ -519,3 +519,25 @@ a{color:var(--blue-deep); text-decoration:none}
     grid-template-columns: 1fr;
   }
 }
+/* --- Grid premium final para noticias del Blog --- */
+.cards.blog-cards {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 26px !important;
+  width: 100%;
+  margin-top: 32px;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .cards.blog-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .cards.blog-cards {
+    grid-template-columns: 1fr !important;
+  }
+}

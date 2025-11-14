@@ -157,15 +157,12 @@ async function loadFeaturedNews() {
 
   // Reemplazar el skeleton con la noticia real
   document.getElementById("featured-news-card").innerHTML = `
-    <div class="blog-card" style="padding:18px;">
-      <h3 style="margin-top:0;">
-        <a href="${item.link}" target="_blank">${item.title}</a>
-      </h3>
-      <p class="excerpt">
-        ${(item.description || "").replace(/<[^>]+>/g, "").substring(0, 180)}...
-      </p>
-    </div>
-  `;
+  <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+  <p class="excerpt">
+    ${(item.description || "").replace(/<[^>]+>/g, "").substring(0, 180)}...
+  </p>
+`;
+
 }
 
 loadFeaturedNews();

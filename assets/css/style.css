@@ -398,3 +398,38 @@ a{color:var(--blue-deep); text-decoration:none}
 .nav a[href="casos.html"] {
   display: none;
 }
+
+/* ============================================================
+   Skeleton para blog
+============================================================ */
+
+.skeleton-blog {
+  height: 200px;            /* alto aproximado de la card */
+  background: #e0e0e0;      /* gris claro */
+  border-radius: 8px;       /* esquinas redondeadas */
+  margin-bottom: 20px;      /* separación entre skeletons */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animación de shimmer */
+.skeleton-blog::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -150px;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -150px;
+  }
+  100% {
+    left: 100%;
+  }
+}

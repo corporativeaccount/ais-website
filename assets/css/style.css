@@ -390,3 +390,11 @@ a{color:var(--blue-deep); text-decoration:none}
   height: 34px;
   stroke: white;
 }
+
+/* ============================================================
+   Ocultar el enlace Casos del menú
+============================================================ */
+
+.nav a[href="casos.html"] {
+  display: none;
+}

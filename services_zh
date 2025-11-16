@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accounting International Services SAS - 服务</title>
+<meta name="description" content="Accounting International Services SAS. 专业会计服务、税务申报、薪资管理、财务咨询等。">
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+  <div class="container nav-container">
+    <div class="logo">AIS</div>
+
+    <nav>
+      <a href="index_zh.html">首页</a>
+      <a href="services_zh.html" class="active">服务</a>
+      <a href="contact_zh.html">联系我们</a>
+    </nav>
+
+    <div class="actions">
+      <div class="theme-toggle" id="theme-toggle">🌞/🌙</div>
+
+      <!-- Language Switch -->
+      <div class="lang-switch">
+        <a href="servicios.html" class="lang-btn">ES</a> |
+        <a href="services_en.html" class="lang-btn">EN</a> |
+        <span class="lang-btn active">中文</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="hero-services fade-in">
+  <div class="container">
+    <h1>我们的服务</h1>
+    <p>我们提供全面的会计和税务解决方案，满足企业与独立专业人士的需求。</p>
+  </div>
+</section>
+
+<section class="services-list container fade-in">
+
+  <div class="service-item">
+    <h2>1. 税务申报与税务咨询</h2>
+    <p>为企业和个人提供税务申报准备、审核和提交的专业支持，帮助您避免罚款并合法优化税务负担。</p>
+  </div>
+
+  <div class="service-item">
+    <h2>2. 会计外包服务</h2>
+    <p>提供完整的会计管理：记账、财务报表、附注和每月报告。非常适合追求准确性、合规性与安心的企业。</p>
+  </div>
+
+  <div class="service-item">
+    <h2>3. 薪资与社保管理</h2>
+    <p>薪资制作、社保计算、缴费处理，以及执行法律要求。适合各种规模的企业。</p>
+  </div>
+
+  <div class="service-item">
+    <h2>4. 财务与行政咨询</h2>
+    <p>协助企业结构设计、财务策略、成本分析与商业规划，用以提升盈利能力与流程效率。</p>
+  </div>
+
+  <div class="service-item">
+    <h2>5. 公司注册与企业正规化</h2>
+    <p>提供公司注册、RUT办理、电子发票启用等行政流程的咨询与办理服务，确保企业合法运营。</p>
+  </div>
+
+  <div class="service-item">
+    <h2>6. 会计记录更新、纠错与清理</h2>
+    <p>我们审核、纠正并更新会计信息，确保符合标准，并提供准确的财务报告。</p>
+  </div>
+
+</section>
+
+<footer>
+  <div class="container footer-container">
+
+    <div class="footer-section">
+      <h3>AIS</h3>
+      <p>Accounting International Services SAS</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>菜单</h3>
+      <a href="index_zh.html">首页</a>
+      <a href="services_zh.html">服务</a>
+      <a href="contact_zh.html">联系我们</a>
+    </div>
+
+    <div class="footer-section">
+      <h3>联系方式</h3>
+      <p>哥伦比亚·波哥大</p>
+      <p>邮箱: info@aisservices.co</p>
+
+      <div class="social-icons">
+        <a href="https://wa.me/573053344555" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/aiscolombia"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/aiscolombia"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/aiscolombia"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 AIS Services – 版权所有
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

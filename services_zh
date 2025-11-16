@@ -2,120 +2,199 @@
 <html lang="zh">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Accounting International Services SAS - 服务</title>
-<meta name="description" content="Accounting International Services SAS. 专业会计服务、税务申报、薪资管理、财务咨询等。">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>会计服务 | AIS Accounting International Services</title>
+<meta name="description" content="会计、税务、薪资、审计及公司注册服务，为企业和创业者提供专业支持。">
 
-<!-- Styles -->
-<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="container nav-container">
-    <div class="logo">AIS</div>
+<header class="header">
+  <div class="container header-inner">
+    <div class="logo">
+      <a href="index_zh.html"><img src="assets/img/logo.svg" alt="AIS logo"></a>
+    </div>
 
-    <nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
+
+    <nav class="nav" id="nav-menu">
       <a href="index_zh.html">首页</a>
       <a href="services_zh.html" class="active">服务</a>
-      <a href="contact_zh.html">联系我们</a>
+      <a href="about_zh.html">关于我们</a>
+      <a href="cases_zh.html">案例</a>
+      <a href="blog_zh.html">博客</a>
+      <a href="contact_zh.html">联系</a>
     </nav>
 
     <div class="actions">
-      <div class="theme-toggle" id="theme-toggle">🌞/🌙</div>
+      <div class="theme-toggle" id="theme-toggle" title="Toggle theme">🌞/🌙</div>
 
-      <!-- Language Switch -->
       <div class="lang-switch">
-        <a href="servicios.html" class="lang-btn">ES</a> |
-        <a href="services_en.html" class="lang-btn">EN</a> |
+        <a href="/servicios.html" class="lang-btn">ES</a> |
+        <a href="/services_en.html" class="lang-btn">EN</a> |
         <span class="lang-btn active">中文</span>
       </div>
+
     </div>
   </div>
 </header>
 
-<section class="hero-services fade-in">
+<main>
+
+<section class="hero">
+  <div class="hero-left">
+    <span class="kicker">哥伦比亚专业会计服务</span>
+    <h1 class="h1">为您的企业提供全面会计解决方案</h1>
+    <p class="lead">会计、税务、薪资、审计和公司注册服务，由专业团队为您提供高质量支持。</p>
+
+    <div class="hero-buttons">
+      <a class="cta" href="contact_zh.html">申请免费报价</a>
+      <a class="secondary-cta" href="index_zh.html">返回首页</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-shape" aria-hidden="true"></div>
+    <img src="assets/img/hero-servicios.jpg" alt="会计服务" class="hero-image">
+  </div>
+</section>
+
+<section class="section">
   <div class="container">
-    <h1>我们的服务</h1>
-    <p>我们提供全面的会计和税务解决方案，满足企业与独立专业人士的需求。</p>
-  </div>
-</section>
-
-<section class="services-list container fade-in">
-
-  <div class="service-item">
-    <h2>1. 税务申报与税务咨询</h2>
-    <p>为企业和个人提供税务申报准备、审核和提交的专业支持，帮助您避免罚款并合法优化税务负担。</p>
-  </div>
-
-  <div class="service-item">
-    <h2>2. 会计外包服务</h2>
-    <p>提供完整的会计管理：记账、财务报表、附注和每月报告。非常适合追求准确性、合规性与安心的企业。</p>
-  </div>
-
-  <div class="service-item">
-    <h2>3. 薪资与社保管理</h2>
-    <p>薪资制作、社保计算、缴费处理，以及执行法律要求。适合各种规模的企业。</p>
-  </div>
-
-  <div class="service-item">
-    <h2>4. 财务与行政咨询</h2>
-    <p>协助企业结构设计、财务策略、成本分析与商业规划，用以提升盈利能力与流程效率。</p>
-  </div>
-
-  <div class="service-item">
-    <h2>5. 公司注册与企业正规化</h2>
-    <p>提供公司注册、RUT办理、电子发票启用等行政流程的咨询与办理服务，确保企业合法运营。</p>
-  </div>
-
-  <div class="service-item">
-    <h2>6. 会计记录更新、纠错与清理</h2>
-    <p>我们审核、纠正并更新会计信息，确保符合标准，并提供准确的财务报告。</p>
-  </div>
-
-</section>
-
-<footer>
-  <div class="container footer-container">
-
-    <div class="footer-section">
-      <h3>AIS</h3>
-      <p>Accounting International Services SAS</p>
+    <div class="section-header">
+      <h2>我们的会计服务</h2>
+      <p class="lead">为您的企业提供全面、专业且高效的会计与税务支持。</p>
     </div>
 
-    <div class="footer-section">
-      <h3>菜单</h3>
-      <a href="index_zh.html">首页</a>
-      <a href="services_zh.html">服务</a>
-      <a href="contact_zh.html">联系我们</a>
-    </div>
+    <div class="cards">
 
-    <div class="footer-section">
-      <h3>联系方式</h3>
-      <p>哥伦比亚·波哥大</p>
-      <p>邮箱: info@aisservices.co</p>
-
-      <div class="social-icons">
-        <a href="https://wa.me/573053344555" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.facebook.com/aiscolombia"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/aiscolombia"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/aiscolombia"><i class="fab fa-linkedin"></i></a>
+      <div class="card">
+        <h3>会计外包服务</h3>
+        <p class="small">根据 IFRS / IFRS for SMEs 标准，提供全套每月会计管理。</p>
+        <ul class="small">
+          <li>会计记录与分类</li>
+          <li>银行对账与内部控制</li>
+          <li>月度与年度财务报表</li>
+          <li>会计结算与管理报告</li>
+          <li>财务咨询与支持</li>
+        </ul>
       </div>
+
+      <div class="card">
+        <h3>税务申报与税务规划</h3>
+        <p class="small">编制并提交税务义务，提供合法的节税策略。</p>
+        <ul class="small">
+          <li>企业与个人所得税</li>
+          <li>增值税、ICA、预扣税</li>
+          <li>税务义务核查</li>
+          <li>税负优化规划</li>
+          <li>协助 DIAN 税务流程</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>薪资与劳动管理</h3>
+        <p class="small">确保企业薪资流程准确、合规且高效。</p>
+        <ul class="small">
+          <li>月度薪资处理</li>
+          <li>员工福利与结算</li>
+          <li>PILA 与社保管理</li>
+          <li>劳动证明出具</li>
+          <li>劳动义务管理</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>经认证的财务报表</h3>
+        <p class="small">为企业提供正式、分析性且可用于银行、投资者和法规要求的财务报表。</p>
+        <ul class="small">
+          <li>经认证的财务报表</li>
+          <li>附注与法规支持</li>
+          <li>完整财务分析</li>
+          <li>银行与投资者报告</li>
+          <li>财务解读指导</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>审计与内部控制</h3>
+        <p class="small">识别风险、优化流程并确保企业合规性。</p>
+        <ul class="small">
+          <li>内部审计</li>
+          <li>会计流程审查</li>
+          <li>风险检测与改进</li>
+          <li>管理报告</li>
+          <li>内部控制模型</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>公司注册与法律-会计咨询</h3>
+        <p class="small">从企业创立到运营，提供全套创业支持。</p>
+        <ul class="small">
+          <li>SAS 公司注册</li>
+          <li>商会登记</li>
+          <li>DIAN 与 RUT 注册</li>
+          <li>税务制度选择</li>
+          <li>初始会计设置</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:26px;">
+      <a href="contact_zh.html" class="cta section-button">申请免费报价</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+
+    <div>
+      <img src="assets/img/logo.svg" alt="AIS logo" style="height:42px;margin-bottom:10px">
+      <div class="small">
+        Accounting International Services S.A.S.<br>
+        波哥大，哥伦比亚<br>
+        <a href="mailto:billing@aisservices.co">billing@aisservices.co</a>
+      </div>
+    </div>
+
+    <div class="social-wrapper">
+      <h4 class="social-title">关注我们</h4>
+      <div class="social-links">
+        <a href="AQUI_TU_INSTAGRAM" target="_blank" aria-label="Instagram" class="instagram"></a>
+        <a href="AQUI_TU_TIKTOK" target="_blank" aria-label="TikTok" class="tiktok"></a>
+        <a href="AQUI_TU_LINKEDIN" target="_blank" aria-label="LinkedIn" class="linkedin"></a>
+      </div>
+    </div>
+
+    <div class="links small">
+      <a href="privacy_zh.html">隐私政策</a>
+      <a href="contact_zh.html">联系</a>
+      <a href="blog_zh.html">博客</a>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    © 2025 AIS Services – 版权所有
+    © <span id="year"></span> AIS Accounting International Services. 版权所有。
   </div>
 </footer>
 
-<script src="script.js"></script>
+<a href="AQUI_TU_WHATSAPP" class="whatsapp-float" target="_blank" aria-label="WhatsApp"></a>
+
+<script src="assets/js/theme.js" defer></script>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

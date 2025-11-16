@@ -433,3 +433,31 @@ a{color:var(--blue-deep); text-decoration:none}
     left: 100%;
   }
 }
+
+/* ============================================================
+   ESTILO BOTONES IDIOMAS
+============================================================ */
+
+.lang-switch {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-switch a {
+  color: var(--text);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.lang-switch a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.lang-switch .active {
+  color: var(--primary);
+  text-decoration: underline;
+}

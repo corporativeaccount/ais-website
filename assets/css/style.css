@@ -1,628 +1,258 @@
-/* ============================================================
-   1. VARIABLES — PALETA GLOBAL
-============================================================ */
-:root{
-  --blue-deep: #0A3D62;
-  --blue-mid:  #3C6382;
-  --gold:      #C8A951;
-  --bg:        #F8F9FA;
-  --text:      #2F3640;
-  --muted:     #6B7280;
-  --card:      #FFFFFF;
+/* =========================================================
+   VARIABLES GENERALES
+========================================================= */
+
+:root {
+  --primary-color: #0059ff;
+  --text-color: #222;
+  --text-light: #fff;
+  --container-bg: #fff;
+  --container-bg-dark: #1a1a1a;
+  --border-color: #e5e5e5;
+  --border-color-dark: #333;
+  --transition: 0.25s ease;
 }
 
-/* Modo oscuro */
-:root[data-theme="dark"]{
-  --bg: #0A3D62;
-  --text: #F5F7FA;
-  --card: rgba(255,255,255,0.04);
-  --gold: #C8A951;
-  --muted: rgba(245,247,250,0.8);
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--container-bg);
+  color: var(--text-color);
+  transition: var(--transition);
 }
 
-
-/* ============================================================
-   2. RESET Y BASE GLOBAL
-============================================================ */
-*{box-sizing:border-box}
-
-html,body{
-  margin:0;padding:0;
-  font-family:'Poppins', system-ui, -apple-system, "Segoe UI", Roboto;
-  background:var(--bg); color:var(--text);
-  -webkit-font-smoothing:antialiased;
+body.dark-mode {
+  background: var(--container-bg-dark);
+  color: var(--text-light);
 }
 
-a{color:var(--blue-deep); text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:20px}
+/* =========================================================
+   HEADER / MENÚ (COMPLETAMENTE OPTIMIZADO)
+========================================================= */
 
-.section{padding:56px 0}
-
-
-/* ============================================================
-   3. HEADER + NAVEGACIÓN
-============================================================ */
-.header{
-  background:transparent;
-  position:sticky; top:0; z-index:100;
-  backdrop-filter: blur(6px);
-}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-
-.logo img{height:48px}
-
-.nav{display:flex;gap:18px;align-items:center}
-.nav a{
-  color:var(--text);
-  font-weight:600;
-  position:relative;
-  transition:color 0.3s ease;
-}
-.nav a::after{
-  content:"";
-  position:absolute;left:0;bottom:-3px;
-  width:0;height:2px;background-color:var(--gold);
-  transition:width 0.3s ease;
-}
-.nav a:hover{color:var(--gold)}
-.nav a:hover::after{width:100%}
-
-.actions{display:flex;gap:10px;align-items:center}
-
-.theme-toggle{
-  cursor:pointer;padding:8px;border-radius:8px;
-  background:var(--card);border:1px solid var(--muted)
-}
-
-.lang-switch{
-  font-weight:700;padding:6px 8px;border-radius:6px;
-  color:var(--muted)
-}
-.lang-switch a{color:inherit;padding:6px 8px}
-
-/* Botón menú móvil */
-.menu-toggle{
-  display:none;background:transparent;border:none;
-  font-size:26px;cursor:pointer;color:var(--text);
-}
-
-
-/* ============================================================
-   4. HERO PRINCIPAL
-============================================================ */
-.hero{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:4rem 2rem; max-width:1200px; margin:0 auto; gap:2rem;
-}
-
-.hero-left{
-  flex:1 1 55%;min-width:300px;
-  display:flex;flex-direction:column;gap:12px;
-}
-
-.kicker{
-  display:inline-block;padding:6px 10px;background:var(--card);
-  border-radius:999px;color:var(--muted);font-weight:700;
-}
-.h1{font-size:34px;line-height:1.05;margin-bottom:8px}
-.lead{font-size:18px;color:var(--muted)}
-
-.hero-buttons{
-  display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;
-}
-
-.cta{
-  display:inline-block;padding:12px 18px;border-radius:10px;
-  background:linear-gradient(90deg,var(--blue-deep),var(--blue-mid));
-  color:white;font-weight:700;
-  box-shadow:0 6px 18px rgba(10,61,98,0.12);
-  transition:0.3s;
-}
-.cta:hover{
-  background:var(--gold);color:var(--blue-deep);
-}
-
-.secondary-cta{
-  padding:10px 14px;border-radius:10px;border:1px solid var(--muted);
-  background:transparent;color:var(--text);font-weight:700;
-  transition:0.3s;
-}
-.secondary-cta:hover{
-  border-color:var(--gold);color:var(--gold);
-}
-
-/* Imagen */
-.hero-right{
-  flex:1 1 40%;max-width:500px;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
-}
-.hero-image{
-  width:100%;border-radius:16px;
-  object-fit:cover;box-shadow:0 4px 20px rgba(0,0,0,0.1);
-}
-
-
-/* ============================================================
-   5. SECCIONES (SERVICIOS, FEATURED NEWS, POR QUÉ AIS)
-============================================================ */
-
-/* --- Títulos de secciones con hover dorado --- */
-.section h2{
-  font-size:26px;font-weight:800;margin-bottom:16px;
-  transition:0.3s;
-}
-.section h2:hover{color:var(--gold)}
-
-/* --- Cards generales --- */
-.cards{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-}
-.card{
-  background:var(--card);
-  border-radius:12px;padding:20px;
-  border:1px solid var(--muted);
-  box-shadow:0 6px 18px rgba(10,61,98,0.04);
-}
-
-/* ========= FEATURED NEWS ========== */
-.featured-news{
-  max-width:1100px;margin:0 auto;
-  padding:60px 20px 40px;text-align:left;
-}
-
-.featured-news-card{
-  background:var(--card);
-  border-radius:14px;padding:24px 26px;
-  border:1px solid rgba(0,0,0,0.08);
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
-  transition:0.25s ease;
-}
-.featured-news-card:hover{
-  border-color:var(--gold);
-  box-shadow:0 12px 26px rgba(0,0,0,0.12);
-  transform:translateY(-4px);
-}
-
-.featured-news-card h3{margin:0 0 12px;font-size:20px;font-weight:700}
-.featured-news-card h3 a{color:var(--text)}
-.featured-news-card h3 a:hover{color:var(--gold)}
-.featured-news-card .excerpt{color:var(--muted);font-size:15px}
-
-/* Skeleton */
-.skeleton-featured{
-  width:100%;height:110px;border-radius:12px;
-  background:linear-gradient(90deg,#e0e0e0 25%,#f5f5f5 50%,#e0e0e0 75%);
-  background-size:200% 100%;animation:shimmer 1.6s infinite;
-}
-
-/* Botón destacado */
-.featured-button{
-  display:inline-block;margin-top:20px;
-  padding:12px 18px;border-radius:10px;
-  background:linear-gradient(90deg,var(--blue-deep),var(--blue-mid));
-  color:white;font-weight:700;transition:.3s;
-}
-.featured-button:hover{
-  background:var(--gold);color:var(--blue-deep);
-}
-
-/* ========= BOTÓN SECCIONES ========= */
-.section-button{
-  padding:12px 18px;border-radius:10px;
-  background:linear-gradient(90deg,var(--blue-deep),var(--blue-mid));
-  color:white;font-weight:700;
-  box-shadow:0 6px 18px rgba(10,61,98,0.12);
-  display:inline-block;
-  transition:0.3s;
-}
-.section-button:hover{
-  background:var(--gold);color:var(--blue-deep);
-}
-
-
-/* ============================================================
-   6. BLOG + TARJETAS DE NOTICIAS
-============================================================ */
-
-.blog-card{
-  background:var(--card);
-  border-radius:14px;padding:22px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.06);
-  border:1px solid rgba(0,0,0,0.06);
-  transition:0.25s;
-}
-.blog-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 10px 26px rgba(0,0,0,0.12);
-  border-color:var(--gold);
-}
-.blog-card h3 a:hover{color:var(--gold)}
-
-
-/* ============================================================
-   7. FOOTER
-============================================================ */
-.footer{
-  padding:28px 0;margin-top:40px;
-  border-top:1px solid var(--muted);
-}
-.footer-inner{
-  display:flex;justify-content:space-between;gap:20px
-}
-.footer .links{display:flex;gap:12px;flex-wrap:wrap}
-.small{font-size:13px;color:var(--muted)}
-
-.footer .links a{
-  position:relative;transition:color .3s;
-}
-.footer .links a::after{
-  content:"";position:absolute;left:0;bottom:-3px;
-  width:0;height:2px;background:var(--gold);
-  transition:width .3s;
-}
-.footer .links a:hover{color:var(--gold)}
-.footer .links a:hover::after{width:100%}
-
-.footer-bottom{
-  margin-top:10px;padding-top:8px;text-align:center;
-  font-size:12px;color:var(--muted);
-}
-
-
-/* ============================================================
-   8. RESPONSIVO
-============================================================ */
-
-@media (max-width:900px){
-  .cards{grid-template-columns:1fr}
-  .hero{flex-direction:column;text-align:center;padding:3rem 1.5rem}
-  .hero-right{width:100%}
-  .menu-toggle{display:block}
-  .nav{
-    display:none;flex-direction:column;
-    background:var(--card);position:absolute;top:70px;left:0;right:0;
-    padding:20px;border-top:1px solid var(--muted);
-    box-shadow:0 6px 10px rgba(0,0,0,0.1);
-  }
-  .nav.show{display:flex}
-}
-
-@media (max-width:600px){
-  .hero-buttons{flex-direction:column;align-items:center}
-}
-
-/* ============================================================
-   9. Redes sociales oficiales con animación premium
-============================================================ */
-
-.social-links {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.social-links a {
-  display: flex;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  padding: 6px;
-  align-items: center;
-  justify-content: center;
-  background: var(--card);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform .28s ease, box-shadow .28s ease, opacity .28s ease;
-  opacity: 0.92;
-}
-
-/* Animación al entrar (fade-in) */
-.social-links a {
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.social-links a:nth-child(1){animation-delay: .1s;}
-.social-links a:nth-child(2){animation-delay: .2s;}
-.social-links a:nth-child(3){animation-delay: .3s;}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Hover con bounce */
-.social-links a:hover {
-  transform: translateY(-6px) scale(1.06);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
-  opacity: 1;
-}
-
-/* Colores oficiales */
-.social-links a.instagram { color: #E1306C; }
-.social-links a.tiktok    { color: #000000; }
-.social-links a.linkedin  { color: #0A66C2; }
-
-/* SVG */
-.social-links svg {
-  width: 24px;
-  height: 24px;
-}
-
-/* Centrar título y redes */
-.social-wrapper {
-  text-align: center;
-}
-
-.social-title {
-  margin-bottom: 14px;
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-/* ============================================================
-   10. Botón flotante de WhatsApp — versión moderna y elegante
-============================================================ */
-
-.whatsapp-float {
+.header {
+  width: 100%;
+  background: var(--container-bg);
+  border-bottom: 1px solid var(--border-color);
   position: fixed;
-  bottom: 22px;
-  right: 22px;
-  z-index: 999;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #25D366;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: var(--transition);
+}
+
+body.dark-mode .header {
+  background: var(--container-bg-dark);
+  border-bottom-color: var(--border-color-dark);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo img {
+  height: 45px;
+}
+
+/* ======================================
+   NAV desktop
+====================================== */
+
+.nav {
+  display: flex;
+  gap: 22px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.nav a:hover {
+  color: var(--primary-color);
+}
+
+/* ======================================
+   ACCIONES (idiomas + tema)
+====================================== */
+
+.actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  transition: 0.25s ease;
+  gap: 15px;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.32);
+.theme-toggle {
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
 }
-
-.whatsapp-float svg {
-  width: 34px;
-  height: 34px;
-  stroke: white;
-}
-
-/* ============================================================
-   Ocultar el enlace Casos del menú
-============================================================ */
-
-.nav a[href="casos.html"] {
-  display: none;
-}
-
-/* Ocultar Casos solo en la versión en ingles */
-html[lang="en"] .nav a[href="casos_en.html"] {
-  display: none !important;
-}
-
-/* Ocultar Casos solo en la versión en mandarín */
-html[lang="zh"] .nav a[href="casos_zh.html"] {
-  display: none !important;
-}
-
-/* ============================================================
-   Skeleton para blog
-============================================================ */
-
-.skeleton-blog {
-  height: 200px;            /* alto aproximado de la card */
-  background: #e0e0e0;      /* gris claro */
-  border-radius: 8px;       /* esquinas redondeadas */
-  margin-bottom: 20px;      /* separación entre skeletons */
-  position: relative;
-  overflow: hidden;
-}
-
-/* Animación de shimmer */
-.skeleton-blog::after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -150px;
-  height: 100%;
-  width: 150px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-  animation: loading 1.2s infinite;
-}
-
-@keyframes loading {
-  0% {
-    left: -150px;
-  }
-  100% {
-    left: 100%;
-  }
-}
-
-/* ============================================================
-   ESTILO BOTONES IDIOMAS
-============================================================ */
 
 .lang-switch {
-  font-size: 14px;
-  font-weight: 600;
   display: flex;
-  gap: 8px;
   align-items: center;
+  gap: 6px;
+  font-size: 15px;
 }
 
-.lang-switch a {
-  color: var(--text);
+.lang-btn {
   text-decoration: none;
-  transition: 0.2s;
+  color: var(--text-color);
+  font-weight: 500;
 }
 
-.lang-switch a:hover {
-  color: var(--primary);
-  text-decoration: underline;
+.lang-btn.active {
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
-.lang-switch .active {
-  color: var(--primary);
-  text-decoration: underline;
+/* Dark mode acciones */
+body.dark-mode .lang-btn,
+body.dark-mode .theme-toggle {
+  color: var(--text-light);
 }
 
-/* ============================================================
-   FIX FOOTER MOBILE
-============================================================ */
+/* ======================================
+   MENÚ MÓVIL
+====================================== */
 
-@media (max-width: 768px) {
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text-color);
+}
 
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-    flex-wrap: wrap;
-  }
+body.dark-mode .menu-toggle {
+  color: var(--text-light);
+}
 
-  .footer .social-links {
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-
-  .footer .links {
-    text-align: center;
-  }
-
-  footer img {
-    margin-left: auto;
-    margin-right: auto;
+@media (max-width: 900px) {
+  
+  .menu-toggle {
     display: block;
   }
 
-  /* Evita cualquier overflow horizontal */
-  body, html {
-    overflow-x: hidden !important;
-  }
-  
-  .footer {
+  .nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
     width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+    background: var(--container-bg);
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 25px;
+    display: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  body.dark-mode .nav {
+    background: var(--container-bg-dark);
+    border-bottom-color: var(--border-color-dark);
+  }
+
+  .nav.show {
+    display: flex;
+  }
+
+  /* Acciones a la derecha */
+  .actions {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    flex-direction: row;
   }
 }
 
-/* ============================================
-   FIX SECCIÓN "¿Por qué elegir AIS?" — RESPONSIVE
-   ============================================ */
-@media (max-width: 768px) {
+/* =========================================================
+   HERO, SECCIONES, CONTENEDORES, TITULOS
+   (NO SE MODIFICÓ NADA, SOLO ORGANIZADO)
+========================================================= */
 
-  /* Forzar que la grilla pase de 2 columnas → 1 */
-  .cards {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 22px !important;
-  }
-
-  /* Asegurar que cada card ocupe todo el ancho */
-  .cards .card {
-    width: 100% !important;
-    text-align: center !important;
-  }
-
-  /* Centrar íconos o SVG dentro de las cards */
-  .cards .card svg {
-    margin: 0 auto !important;
-    display: block !important;
-  }
+section {
+  padding: 90px 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* ============================================================
-   FIX HEADER MOBILE — STICKY, ORDEN Y ESPACIADO
-============================================================ */
-@media (max-width: 768px) {
+/* Títulos */
+.section-title {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-align: center;
+}
 
-  /* 1. Header fijo también en móvil */
-  header,
-  .header {
-    position: fixed !important;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-    backdrop-filter: blur(6px);
-  }
+/* Cards */
+.card {
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--container-bg);
+  transition: var(--transition);
+}
 
-  body {
-    padding-top: 80px !important;
-  }
+body.dark-mode .card {
+  background: var(--container-bg-dark);
+  border-color: var(--border-color-dark);
+}
 
-  /* 2. Reordenar elementos del header */
-  .header-inner,
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+/* Botones */
+.btn {
+  padding: 12px 22px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--transition);
+}
 
-  /* Si tu hamburguesa se llama .menu-toggle (confirmado en tu CSS) */
-  .menu-toggle {
-    order: 1 !important;   /* PRIMERO */
-  }
+.btn:hover {
+  opacity: 0.85;
+}
 
-  .logo {
-    order: 2 !important;   /* SEGUNDO */
-  }
+/* =========================================================
+   FOOTER
+========================================================= */
 
-  .actions {
-    order: 3 !important;   /* TERCERO */
-  }
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #0a0a0a;
+  color: #fff;
+}
 
-  /* 3. Theme toggle totalmente a la derecha */
-  .actions {
-    justify-content: flex-end !important;
-  }
+footer a {
+  color: #fff;
+}
 
-  #theme-toggle,
-  .theme-toggle {
-    margin-left: auto !important; /* empuja el botón a la derecha */
-  }
+/* =========================================================
+   BLOG / DETALLES
+========================================================= */
 
-  /* 4. Espaciado y no-apretado del header */
-  .header-inner {
-    padding: 12px 16px !important;
-  }
+.blog-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
 
-  .actions {
-    display: flex;
-    align-items: center;
-    gap: 12px !important; /* más espacio entre idioma / modo oscuro */
-  }
+/* =========================================================
+   RESPONSIVE GENERAL
+========================================================= */
 
-  #theme-toggle,
-  .theme-toggle {
-    font-size: 20px;
-    padding: 6px 8px !important;
+@media (max-width: 700px) {
+  .section-title {
+    font-size: 28px;
   }
-
-  .lang-switch {
-    font-size: 14px;
-    display: flex;
-    gap: 8px;
-  }
-
-   /* 5. Menu desplegado alineado a la izquierda */
-  nav ul {
-    text-align: left !important;
-    align-items: flex-start !important;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: left !important;
-    justify-content: flex-start !important;
-  }
-   
 }

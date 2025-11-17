@@ -114,11 +114,18 @@ a{color:var(--blue-deep); text-decoration:none}
 .actions .lang-switch{ order: 1; display:flex; gap:8px; align-items:center; }
 .actions .theme-toggle{ order: 2; }
 
-/* Theme toggle */
+/* FIX: theme toggle icons horizontal */
 .theme-toggle{
-  cursor:pointer;padding:8px;border-radius:8px;
-  background:var(--card);border:1px solid var(--muted);
-  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  padding:8px 10px;
+  border-radius:8px;
+  background:var(--card);
+  border:1px solid var(--muted);
+  display:flex;
+  flex-direction:row; /* ← ESTO ES LO QUE LO HACE HORIZONTAL */
+  align-items:center;
+  gap:6px;            /* Espacio entre sol y luna */
+  justify-content:center;
 }
 
 /* Language switch default style */

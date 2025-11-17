@@ -399,6 +399,16 @@ a{color:var(--blue-deep); text-decoration:none}
   display: none;
 }
 
+/* Ocultar Casos solo en la versión en ingles */
+html[lang="en"] .nav a[href="casos_en.html"] {
+  display: none !important;
+}
+
+/* Ocultar Casos solo en la versión en mandarín */
+html[lang="zh"] .nav a[href="casos_zh.html"] {
+  display: none !important;
+}
+
 /* ============================================================
    Skeleton para blog
 ============================================================ */

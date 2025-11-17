@@ -515,28 +515,27 @@ html[lang="zh"] .nav a[href="casos_zh.html"] {
   }
 }
 
-/* ============================================================
-   FIX SECCIÓN "¿Por qué elegir AIS?" EN MÓVIL
-============================================================ */
-
+/* ============================================
+   FIX SECCIÓN "¿Por qué elegir AIS?" — RESPONSIVE
+   ============================================ */
 @media (max-width: 768px) {
 
-  .features-grid {
+  /* Forzar que la grilla pase de 2 columnas → 1 */
+  .cards {
     display: flex !important;
     flex-direction: column !important;
     gap: 22px !important;
   }
 
-  .feature-box {
+  /* Asegurar que cada card ocupe todo el ancho */
+  .cards .card {
     width: 100% !important;
-    text-align: center;
-    padding: 18px;
+    text-align: center !important;
   }
 
-  .feature-box svg {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  /* Centrar íconos o SVG dentro de las cards */
+  .cards .card svg {
+    margin: 0 auto !important;
+    display: block !important;
   }
-
 }

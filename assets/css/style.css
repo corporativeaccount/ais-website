@@ -20,7 +20,6 @@
   --muted: rgba(245,247,250,0.8);
 }
 
-
 /* ============================================================
    2. RESET Y BASE GLOBAL
 ============================================================ */
@@ -31,6 +30,7 @@ html,body{
   font-family:'Poppins', system-ui, -apple-system, "Segoe UI", Roboto;
   background:var(--bg); color:var(--text);
   -webkit-font-smoothing:antialiased;
+  -webkit-touch-callout: none;
 }
 
 a{color:var(--blue-deep); text-decoration:none}
@@ -38,25 +38,59 @@ a{color:var(--blue-deep); text-decoration:none}
 
 .section{padding:56px 0}
 
-
 /* ============================================================
-   3. HEADER + NAVEGACIÓN
+   3. HEADER + NAVEGACIÓN  —  (OPTIMIZADO)
+   Transparent header with blur (Option A). Mobile: hamburger
+   left, logo next, actions right. Language first, theme last.
 ============================================================ */
+
+/* Header base */
 .header{
   background:transparent;
-  position:sticky; top:0; z-index:100;
+  position:sticky;
+  top:0;
+  z-index:100;
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
 
-.logo img{height:48px}
+/* Header inner wrapper */
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 20px;
+}
 
-.nav{display:flex;gap:18px;align-items:center}
+/* Logo */
+.logo{display:flex;align-items:center;gap:8px}
+.logo img{height:48px;display:block}
+
+/* Menu toggle (hamburger) */
+.menu-toggle{
+  display:none;
+  background:transparent;border:none;
+  font-size:26px;cursor:pointer;color:var(--text);
+  padding:6px 8px;border-radius:8px;
+}
+
+/* Primary nav (desktop) */
+.nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  justify-content:center;
+  flex:1;
+}
+
+/* nav links */
 .nav a{
   color:var(--text);
   font-weight:600;
   position:relative;
   transition:color 0.3s ease;
+  padding:6px 8px;
 }
 .nav a::after{
   content:"";
@@ -67,28 +101,36 @@ a{color:var(--blue-deep); text-decoration:none}
 .nav a:hover{color:var(--gold)}
 .nav a:hover::after{width:100%}
 
-.actions{display:flex;gap:10px;align-items:center}
+/* Actions container (languages + theme) */
+.actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  min-width:0;
+  /* don't push it unless mobile rules ask it */
+}
 
+/* Ensure the language switch comes first and theme second regardless of HTML order */
+.actions .lang-switch{ order: 1; display:flex; gap:8px; align-items:center; }
+.actions .theme-toggle{ order: 2; }
+
+/* Theme toggle */
 .theme-toggle{
   cursor:pointer;padding:8px;border-radius:8px;
-  background:var(--card);border:1px solid var(--muted)
+  background:var(--card);border:1px solid var(--muted);
+  display:flex;align-items:center;justify-content:center;
 }
 
+/* Language switch default style */
 .lang-switch{
   font-weight:700;padding:6px 8px;border-radius:6px;
-  color:var(--muted)
+  color:var(--muted); display:flex; gap:6px; align-items:center;
 }
-.lang-switch a{color:inherit;padding:6px 8px}
-
-/* Botón menú móvil */
-.menu-toggle{
-  display:none;background:transparent;border:none;
-  font-size:26px;cursor:pointer;color:var(--text);
-}
-
+.lang-switch a{color:inherit;padding:6px 6px}
 
 /* ============================================================
    4. HERO PRINCIPAL
+   (Mantenido tal cual)
 ============================================================ */
 .hero{
   display:flex;align-items:center;justify-content:space-between;
@@ -141,7 +183,6 @@ a{color:var(--blue-deep); text-decoration:none}
   width:100%;border-radius:16px;
   object-fit:cover;box-shadow:0 4px 20px rgba(0,0,0,0.1);
 }
-
 
 /* ============================================================
    5. SECCIONES (SERVICIOS, FEATURED NEWS, POR QUÉ AIS)
@@ -220,7 +261,6 @@ a{color:var(--blue-deep); text-decoration:none}
   background:var(--gold);color:var(--blue-deep);
 }
 
-
 /* ============================================================
    6. BLOG + TARJETAS DE NOTICIAS
 ============================================================ */
@@ -238,7 +278,6 @@ a{color:var(--blue-deep); text-decoration:none}
   border-color:var(--gold);
 }
 .blog-card h3 a:hover{color:var(--gold)}
-
 
 /* ============================================================
    7. FOOTER
@@ -269,25 +308,45 @@ a{color:var(--blue-deep); text-decoration:none}
   font-size:12px;color:var(--muted);
 }
 
-
 /* ============================================================
    8. RESPONSIVO
 ============================================================ */
 
+/* Desktop -> tablet breakpoint adjustments */
 @media (max-width:900px){
   .cards{grid-template-columns:1fr}
   .hero{flex-direction:column;text-align:center;padding:3rem 1.5rem}
   .hero-right{width:100%}
   .menu-toggle{display:block}
+  /* Mobile nav hidden by default */
   .nav{
-    display:none;flex-direction:column;
-    background:var(--card);position:absolute;top:70px;left:0;right:0;
-    padding:20px;border-top:1px solid var(--muted);
-    box-shadow:0 6px 10px rgba(0,0,0,0.1);
+    display:none;
+    flex-direction:column;
+    background:var(--card);
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    padding:16px 20px;
+    border-top:1px solid var(--muted);
+    box-shadow:0 6px 10px rgba(0,0,0,0.08);
+    align-items:flex-start;
+    z-index:9998;
   }
   .nav.show{display:flex}
+  /* Make nav links block on mobile to align left */
+  .nav a{
+    display:block;
+    width:100%;
+    padding:10px 0;
+    text-align:left;
+    color:var(--text);
+  }
+  /* Ensure nav underline effect still works */
+  .nav a::after{left:0;right:auto}
 }
 
+/* Small phones */
 @media (max-width:600px){
   .hero-buttons{flex-direction:column;align-items:center}
 }
@@ -515,9 +574,9 @@ html[lang="zh"] .nav a[href="casos_zh.html"] {
   }
 }
 
-/* ============================================
+/* ============================================================
    FIX SECCIÓN "¿Por qué elegir AIS?" — RESPONSIVE
-   ============================================ */
+============================================================ */
 @media (max-width: 768px) {
 
   /* Forzar que la grilla pase de 2 columnas → 1 */
@@ -542,87 +601,112 @@ html[lang="zh"] .nav a[href="casos_zh.html"] {
 
 /* ============================================================
    FIX HEADER MOBILE — STICKY, ORDEN Y ESPACIADO
+   (Mobile behaviors: hamburger left, logo next, actions right)
 ============================================================ */
 @media (max-width: 768px) {
 
-  /* 1. Header fijo también en móvil */
+  /* header fixed on mobile with blur (follows scroll like desktop) */
   header,
   .header {
     position: fixed !important;
     top: 0;
     width: 100%;
     z-index: 9999;
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
+    background: rgba(255,255,255,0.6);
   }
 
+  /* spacing so content doesn't hide under fixed header */
   body {
-    padding-top: 80px !important;
+    padding-top: 72px !important;
   }
 
-  /* 2. Reordenar elementos del header */
-  .header-inner,
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* Si tu hamburguesa se llama .menu-toggle (confirmado en tu CSS) */
-  .menu-toggle {
-    order: 1 !important;   /* PRIMERO */
-  }
-
-  .logo {
-    order: 2 !important;   /* SEGUNDO */
-  }
-
-  .actions {
-    order: 3 !important;   /* TERCERO */
-  }
-
-  /* 3. Theme toggle totalmente a la derecha */
-  .actions {
-    justify-content: flex-end !important;
-  }
-
-  #theme-toggle,
-  .theme-toggle {
-    margin-left: auto !important; /* empuja el botón a la derecha */
-  }
-
-  /* 4. Espaciado y no-apretado del header */
+  /* layout of header-inner */
   .header-inner {
-    padding: 12px 16px !important;
+    padding: 10px 14px !important;
+    align-items:center;
+    gap:10px;
   }
 
+  /* show hamburger and place it first */
+  .menu-toggle {
+    display:block;
+    order: 1;
+    margin-right:6px;
+  }
+
+  /* logo second */
+  .logo {
+    order: 2;
+    flex: 0 0 auto;
+  }
+
+  /* actions third (pushed to the right) */
   .actions {
-    display: flex;
-    align-items: center;
-    gap: 12px !important; /* más espacio entre idioma / modo oscuro */
+    order: 3;
+    flex: 1 1 auto;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    justify-content:flex-end; /* push languages left side of actions and theme at far right */
   }
 
-  #theme-toggle,
-  .theme-toggle {
-    font-size: 20px;
-    padding: 6px 8px !important;
+  /* ensure lang-switch is left inside actions and theme at extreme right */
+  .actions .lang-switch { order: 1; margin-right: 8px; }
+  .actions .theme-toggle { order: 2; margin-left: 6px; }
+
+  /* make the language links vertical when needed (if you want that later) */
+  .lang-switch.vertical { flex-direction:column; align-items:flex-start; gap:6px; }
+
+  /* nav becomes full-width stacked and left-aligned when visible */
+  .nav{
+    position:absolute;
+    top:72px;
+    left:0;
+    right:0;
+    background:var(--card);
+    padding:16px 20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    border-top:1px solid rgba(0,0,0,0.06);
+    display:none;
+    flex-direction:column;
+    align-items:flex-start;
+    z-index:9998;
   }
 
-  .lang-switch {
-    font-size: 14px;
-    display: flex;
-    gap: 8px;
+  .nav.show{ display:flex; }
+
+  .nav a{
+    display:block;
+    width:100%;
+    padding:10px 0;
+    text-align:left;
+    color:var(--text);
+    font-weight:600;
   }
 
-   /* 5. Menu desplegado alineado a la izquierda */
-  nav ul {
-    text-align: left !important;
-    align-items: flex-start !important;
-  }
+  /* ensure underline animation won't overflow */
+  .nav a::after{ left:0; width:0; }
 
-  nav ul li {
-    width: 100%;
-    text-align: left !important;
-    justify-content: flex-start !important;
-  }
-   
+  /* slightly smaller logo on mobile if needed */
+  .logo img{ height:42px; }
+
+  /* reduce hero padding on small screens */
+  .hero{ padding:2.2rem 1rem; }
+
+  /* reduce footer top padding to fit mobile */
+  .footer{ padding:20px 0; margin-top:34px; }
+
+}
+
+/* ============================================================
+   Small final tweaks for accessibility and focus states
+============================================================ */
+.menu-toggle:focus,
+.theme-toggle:focus,
+.lang-switch a:focus,
+.nav a:focus {
+  outline: 3px solid rgba(200,169,81,0.18);
+  outline-offset: 2px;
 }

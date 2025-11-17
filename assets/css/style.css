@@ -471,3 +471,47 @@ html[lang="zh"] .nav a[href="casos_zh.html"] {
   color: var(--primary);
   text-decoration: underline;
 }
+
+/* ============================================================
+   FIX FOOTER MOBILE
+============================================================ */
+
+/* --- FIX FOOTER MOBILE --- */
+@media (max-width: 768px) {
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .footer .social-links {
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .footer .links {
+    text-align: center;
+  }
+
+  footer img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  /* Evita cualquier overflow horizontal */
+  body, html {
+    overflow-x: hidden !important;
+  }
+  
+  .footer {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

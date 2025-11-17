@@ -128,6 +128,14 @@ a{color:var(--blue-deep); text-decoration:none}
   justify-content:center;
 }
 
+.theme-toggle {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
 /* Language switch default style */
 .lang-switch{
   font-weight:700;padding:6px 8px;border-radius:6px;

@@ -580,7 +580,17 @@ html[lang="zh"] .nav a[href="casos_zh.html"] {
     order: 3 !important;   /* TERCERO */
   }
 
-  /* 3. Espaciado y no-apretado del header */
+  /* 3. Theme toggle totalmente a la derecha */
+  .actions {
+    justify-content: flex-end !important;
+  }
+
+  #theme-toggle,
+  .theme-toggle {
+    margin-left: auto !important; /* empuja el botón a la derecha */
+  }
+
+  /* 4. Espaciado y no-apretado del header */
   .header-inner {
     padding: 12px 16px !important;
   }
@@ -603,4 +613,16 @@ html[lang="zh"] .nav a[href="casos_zh.html"] {
     gap: 8px;
   }
 
+   /* 5. Menu desplegado alineado a la izquierda */
+  nav ul {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: left !important;
+    justify-content: flex-start !important;
+  }
+   
 }
